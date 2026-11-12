@@ -50,6 +50,20 @@ Exported Airflow 3.2/3.3 DAG source and incident context. No live production acc
 
 Download and verify the local wheel using the official README instructions. Install into a dedicated Python 3.12+ environment and set `CONTENTSWEEP_DAG_DOCTOR_MCP_COMMAND` to the absolute `dagdoctor-mcp` executable path. Use the matching `client-configs/*-local.json` entry instead of the hosted entry, preserving unrelated settings. Kilo offers this as a separate installation method. The skill remains the same; local analysis does not create hosted history or consume hosted credits.
 
+## Preserve the reviewed bundle
+
+Keep every filename, dictionary key and source byte unchanged. A filename such as `daily_load.py` must retain its dot and extension; replacing punctuation changes the input. If a model reconstructs the bundle incorrectly through the MCP upload arguments, stop instead of trying renamed variants. The client's reviewed file-transfer tool can send the original JSON bundle directly to the existing HTTPS upload endpoint, with the private key available in its launch environment:
+
+```bash
+BUNDLE_FILE="/absolute/path/to/owned/bundle.json"
+curl --fail-with-body --silent --show-error --request POST "https://uploads" \
+  --header "Content-Type: application/json" \
+  --header "X-API-Key: ${CONTENTSWEEP_DAG_DOCTOR_API_KEY}" \
+  --data-binary "@${BUNDLE_FILE}"
+```
+
+Verify the source file hash before transfer. Use the returned upload ID with the native MCP preview, quote, execution, report and retry tools. Uploading does not start an evaluation. This transfer requires authorization for the exact source and exported context; never print the key or execute the uploaded code.
+
 ## Recovery and removal
 
 Keep private keys out of source control and command history. Remove only this product's plugin/server/owned companion skill. Keep unrelated tools and settings. Kilo 7.8.27's native skill Remove action deletes `SKILL.md` and leaves companion files. After native removal, preview cleanup of this exact skill directory using the supplied ownership manifest:
