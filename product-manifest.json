@@ -45,7 +45,7 @@
     "local_only": true
   },
   "owned_skill_files": {
-    "SKILL.md": "14ea37c892592511b3a5786c97b28f32a258bf2cbd632433a326c52fd98117e5",
+    "SKILL.md": "8edbfb2c17eef4099156ac9d8d045092aff5328852009e46fd3038d542f8673e",
     "references/hosted-workflow.md": "91484eb33e5eec0e7ca2eb385c07e6f26fc2ee40ebacfaa28b03876b0b486e09",
     "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
   }

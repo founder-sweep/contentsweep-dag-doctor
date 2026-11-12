@@ -7,7 +7,9 @@ description: Review Airflow 3.2/3.3 DAG source and diagnose exported task incide
 
 Use the free local engine when source and logs should stay on the machine. Use the hosted workflow when the user wants a saved hosted diagnosis and authorizes the upload. Installing this skill does not install the engine or connect an MCP server.
 
-Local setup: [official guide](https://mcp.contentsweep.ai/dag-doctor/docs), [wheel](https://mcp.contentsweep.ai/dag-doctor/download), [SHA256 manifest](https://mcp.contentsweep.ai/dag-doctor/downloads/manifest.json). Verify the wheel against the manifest and install it in a Python 3.12+ environment. CLI: `dagdoctor`; local stdio MCP: `dagdoctor-mcp`, tool `diagnose_airflow_dag`.
+Compose with the existing `airflow` skill when available: use `diagnose-airflow-exports` for supplied exports without a live connection, and `airflow` for separately authorized live `af` CLI troubleshooting. This skill does not require `airflow` or grant live access.
+
+Local setup: [official guide](https://mcp.contentsweep.ai/dag-doctor/docs), [wheel](https://mcp.contentsweep.ai/dag-doctor/download), [SHA256 manifest](https://mcp.contentsweep.ai/dag-doctor/downloads/manifest.json). This reviewed skill pins version `1.0.0`, filename `contentsweep_dag_doctor-1.0.0-py3-none-any.whl`, SHA256 `4c70e010790e9e1b18f285f8348ca2e6333c02428673d75bdc8f57b45372da4a`. Verify the downloaded bytes against that literal digest and require the manifest's version, filename and SHA256 to agree before installing in a dedicated Python 3.12+ environment. Stop on any mismatch; do not adopt a replacement digest from the download origin without reviewing an updated skill revision. Configure the client with the installed executable's absolute path. CLI: `dagdoctor`; local stdio MCP: `dagdoctor-mcp`, tool `diagnose_airflow_dag`.
 
 ```sh
 dagdoctor review dags/ --airflow-version 3.3.1 --format json
