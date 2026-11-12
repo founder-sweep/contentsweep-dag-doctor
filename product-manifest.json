@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "title": "DAG Doctor",
+  "repository": "contentsweep-dag-doctor",
+  "plugin": "contentsweep-dag-doctor",
+  "skill": "diagnose-airflow-exports",
+  "skill_path": "skills/diagnose-airflow-exports/SKILL.md",
+  "description": "Diagnose exported Airflow 3.2/3.3 incidents with evidence and explicit coverage gaps.",
+  "homepage": "https://mcp.contentsweep.ai/dag-doctor",
+  "mode": "hosted",
+  "endpoint": "https://mcp.contentsweep.ai/v1/dag-doctor/mcp/",
+  "tools": 10,
+  "setting": "CONTENTSWEEP_DAG_DOCTOR_API_KEY",
+  "pricing": "Five trials per verified organization; $20/20 hosted reports. Free local tools. Missing context, unsupported input and platform failures consume no credit.",
+  "scope": "Exported Airflow 3.2/3.3 DAG source and incident context. No live production access, imported customer code or automatic fixes.",
+  "source": "reviewed-kit",
+  "kit": "dag-doctor",
+  "local": {
+    "command": "dagdoctor-mcp",
+    "module": "contentsweep_dag_doctor.local_mcp",
+    "setting": "CONTENTSWEEP_DAG_DOCTOR_MCP_COMMAND",
+    "tools": 1,
+    "version": "1.0.0"
+  },
+  "connection_modes": [
+    "hosted",
+    "local"
+  ],
+  "required_settings": [
+    "CONTENTSWEEP_DAG_DOCTOR_API_KEY",
+    "CONTENTSWEEP_DAG_DOCTOR_MCP_COMMAND"
+  ],
+  "example_references": [
+    "examples/executor-mismatch/bundle.json",
+    "examples/executor-mismatch/report.json",
+    "examples/executor-mismatch-missing-context/report.json"
+  ],
+  "artifact": {
+    "url": "https://mcp.contentsweep.ai/dag-doctor/download",
+    "manifest_url": "https://mcp.contentsweep.ai/dag-doctor/downloads/manifest.json",
+    "filename": "contentsweep_dag_doctor-1.0.0-py3-none-any.whl",
+    "sha256": "4c70e010790e9e1b18f285f8348ca2e6333c02428673d75bdc8f57b45372da4a",
+    "version": "1.0.0",
+    "python": ">=3.12",
+    "local_only": true
+  }
+}
