@@ -1,0 +1,17 @@
+{
+  "name": "contentsweep-dag-doctor",
+  "owner": {
+    "name": "Content Sweep LLC",
+    "email": "founder@contentsweep.ai"
+  },
+  "metadata": {
+    "description": "Diagnose exported Airflow 3.2/3.3 incidents with evidence and explicit coverage gaps."
+  },
+  "plugins": [
+    {
+      "name": "contentsweep-dag-doctor",
+      "source": "./",
+      "description": "Diagnose exported Airflow 3.2/3.3 incidents with evidence and explicit coverage gaps."
+    }
+  ]
+}
