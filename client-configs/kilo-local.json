@@ -1,0 +1,12 @@
+{
+  "mcp": {
+    "contentsweep-dag-doctor": {
+      "type": "local",
+      "command": [
+        "{env:CONTENTSWEEP_DAG_DOCTOR_MCP_COMMAND}"
+      ],
+      "enabled": true,
+      "timeout": 120000
+    }
+  }
+}

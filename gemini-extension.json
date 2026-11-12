@@ -1,0 +1,21 @@
+{
+  "name": "contentsweep-dag-doctor",
+  "version": "1.0.0",
+  "description": "Diagnose exported Airflow 3.2/3.3 incidents with evidence and explicit coverage gaps.",
+  "mcpServers": {
+    "contentsweep-dag-doctor": {
+      "headers": {
+        "X-API-Key": "${CONTENTSWEEP_DAG_DOCTOR_API_KEY}"
+      },
+      "httpUrl": "https://mcp.contentsweep.ai/v1/dag-doctor/mcp/"
+    }
+  },
+  "settings": [
+    {
+      "name": "DAG Doctor API key",
+      "description": "Verified organization API key for DAG Doctor",
+      "envVar": "CONTENTSWEEP_DAG_DOCTOR_API_KEY",
+      "sensitive": true
+    }
+  ]
+}

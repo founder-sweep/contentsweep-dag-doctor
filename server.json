@@ -1,0 +1,9 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.contentsweep/airflow-dag-doctor",
+  "title": "Airflow DAG Doctor",
+  "description": "Diagnose exported Airflow DAG source and task incidents with evidence and explicit coverage gaps.",
+  "version": "1.0.0",
+  "websiteUrl": "https://mcp.contentsweep.ai/dag-doctor",
+  "remotes": [{"type": "streamable-http", "url": "https://mcp.contentsweep.ai/v1/dag-doctor/mcp/", "headers": [{"name": "X-API-Key", "description": "Verified organization API key", "isRequired": true, "isSecret": true}]}]
+}

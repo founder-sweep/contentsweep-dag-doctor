@@ -1,0 +1,18 @@
+{
+  "airflow_version": "3.3.1",
+  "dag_id": "daily_load",
+  "executor": "KubernetesExecutor",
+  "executor_topology": {
+    "LocalExecutor": {
+      "workers": 1
+    }
+  },
+  "logs": "Task cannot reach its selected executor",
+  "provider_versions": {
+    "apache-airflow-providers-standard": "unknown"
+  },
+  "run_id": "example-run",
+  "schema_version": "1.0",
+  "state": "failed",
+  "task_id": "load"
+}

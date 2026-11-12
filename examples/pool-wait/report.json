@@ -1,0 +1,82 @@
+{
+  "coverage": {
+    "airflow_version": "3.3.1",
+    "python_ast": "analyzed",
+    "runtime_context": "provided",
+    "runtime_execution": "not_performed"
+  },
+  "findings": [
+    {
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "excerpt": null,
+          "fact": "pools={'warehouse': 'full'}",
+          "locator": "DD-RUNTIME-004",
+          "source": "runtime_context"
+        }
+      ],
+      "id": "DD-RUNTIME-004",
+      "metadata": {},
+      "origin": "deterministic",
+      "remediation": "Increase capacity or assign a correctly sized pool; keep executor selection explicit.",
+      "severity": "medium",
+      "status": "open",
+      "title": "Task is waiting for pool capacity"
+    }
+  ],
+  "generated_at": "2026-11-12T13:22:40.812534Z",
+  "input_fingerprint": "sha256:bb033bdf1f27b219da8a6e9d5b6b87bb885996edebaffcacafc54665e8c2af45",
+  "metadata": {
+    "coverage_gaps": [],
+    "dag_like_files": 1,
+    "diagnosis": {
+      "airflow_version": "3.3.1",
+      "candidate_causes": [
+        "DD-RUNTIME-004"
+      ],
+      "confidence": 0.7,
+      "confidence_interpretation": "heuristic score, not a measured probability",
+      "context_schema_version": "1.0",
+      "evidence_references": [
+        "DD-RUNTIME-004"
+      ],
+      "evidence_strength": "supported signature; confirm against the complete incident",
+      "missing_context": [],
+      "primary_cause": "DD-RUNTIME-004",
+      "provider_versions": {
+        "apache-airflow-providers-standard": "unknown"
+      }
+    },
+    "files_analyzed": 1,
+    "patch_suggestions": [],
+    "runtime_context": {
+      "airflow_version": "3.3.1",
+      "attempt": null,
+      "dag_id": "daily_load",
+      "downstream": [],
+      "executor": "LocalExecutor",
+      "executor_topology": {},
+      "log_sha256": "sha256:f82babf4e42a5a601bfceb2b9df20121c2354e174ac54c3911966da5f45dacb6",
+      "missing": [],
+      "pools": {
+        "warehouse": "full"
+      },
+      "provider_versions": {
+        "apache-airflow-providers-standard": "unknown"
+      },
+      "retries": null,
+      "run_id": "example-run",
+      "schema_version": "1.0",
+      "source": null,
+      "state": "queued",
+      "task_id": "load",
+      "upstream": [],
+      "xcom": {}
+    },
+    "supported_complete": true
+  },
+  "product": "airflow-dag-doctor",
+  "schema_version": "1.0",
+  "verdict": "diagnosed"
+}

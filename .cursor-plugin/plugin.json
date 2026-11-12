@@ -1,0 +1,33 @@
+{
+  "name": "contentsweep-dag-doctor",
+  "version": "1.0.0",
+  "description": "Diagnose exported Airflow 3.2/3.3 incidents with evidence and explicit coverage gaps.",
+  "author": {
+    "name": "Content Sweep LLC",
+    "email": "founder@contentsweep.ai"
+  },
+  "homepage": "https://mcp.contentsweep.ai/dag-doctor",
+  "repository": "https://github.com/founder-sweep/contentsweep-dag-doctor",
+  "license": "Apache-2.0",
+  "logo": "assets/contentsweep.svg",
+  "skills": [
+    "skills/diagnose-airflow-exports"
+  ],
+  "keywords": [
+    "mcp",
+    "diagnose-airflow-exports",
+    "contentsweep"
+  ],
+  "variables": {
+    "type": "object",
+    "properties": {
+      "CONTENTSWEEP_DAG_DOCTOR_API_KEY": {
+        "type": "string",
+        "title": "Verified organization API key for DAG Doctor"
+      }
+    },
+    "required": [
+      "CONTENTSWEEP_DAG_DOCTOR_API_KEY"
+    ]
+  }
+}

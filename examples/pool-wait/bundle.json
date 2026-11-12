@@ -1,0 +1,23 @@
+{
+  "airflow_version": "3.3.1",
+  "files": {
+    "daily_load.py": "from airflow import DAG\nfrom airflow.providers.standard.operators.python import PythonOperator\n\ndef load():\n    return 1\n\nwith DAG('daily_load', schedule=None) as dag:\n    task = PythonOperator(task_id='load', python_callable=load)\n"
+  },
+  "runtime_context": {
+    "airflow_version": "3.3.1",
+    "dag_id": "daily_load",
+    "executor": "LocalExecutor",
+    "logs": "Task queued: pool full; no slots",
+    "pools": {
+      "warehouse": "full"
+    },
+    "provider_versions": {
+      "apache-airflow-providers-standard": "unknown"
+    },
+    "run_id": "example-run",
+    "schema_version": "1.0",
+    "state": "queued",
+    "task_id": "load"
+  },
+  "suggest_patches": false
+}

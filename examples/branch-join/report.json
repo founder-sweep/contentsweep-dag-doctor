@@ -1,0 +1,103 @@
+{
+  "coverage": {
+    "airflow_version": "3.3.1",
+    "python_ast": "analyzed",
+    "runtime_context": "provided",
+    "runtime_execution": "not_performed"
+  },
+  "findings": [
+    {
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "excerpt": null,
+          "fact": "join join has multiple parents below branch branch",
+          "locator": "branch.py:7",
+          "source": "dag_code"
+        }
+      ],
+      "id": "DD-TRIGGER-001",
+      "metadata": {
+        "evidence_strength": "static evidence; runtime semantics require review"
+      },
+      "origin": "deterministic",
+      "remediation": "Review branch semantics and choose a branch-compatible trigger rule.",
+      "severity": "high",
+      "status": "open",
+      "title": "Branch join can be skipped by all_success"
+    },
+    {
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "excerpt": null,
+          "fact": "state=upstream_failed; upstream=['a', 'b']",
+          "locator": "DD-RUNTIME-001",
+          "source": "runtime_context"
+        }
+      ],
+      "id": "DD-RUNTIME-001",
+      "metadata": {},
+      "origin": "deterministic",
+      "remediation": "Inspect the first failed upstream task before changing this task.",
+      "severity": "high",
+      "status": "open",
+      "title": "Task state indicates an upstream failure"
+    }
+  ],
+  "generated_at": "2026-11-12T13:22:40.813927Z",
+  "input_fingerprint": "sha256:47d04ae78264748af42c390b8f285ca2068c237b1e1cdd1f74a6f5281ccaae14",
+  "metadata": {
+    "coverage_gaps": [],
+    "dag_like_files": 1,
+    "diagnosis": {
+      "airflow_version": "3.3.1",
+      "candidate_causes": [
+        "DD-RUNTIME-001"
+      ],
+      "confidence": 0.7,
+      "confidence_interpretation": "heuristic score, not a measured probability",
+      "context_schema_version": "1.0",
+      "evidence_references": [
+        "DD-RUNTIME-001"
+      ],
+      "evidence_strength": "supported signature; confirm against the complete incident",
+      "missing_context": [],
+      "primary_cause": "DD-RUNTIME-001",
+      "provider_versions": {
+        "apache-airflow-providers-standard": "unknown"
+      }
+    },
+    "files_analyzed": 1,
+    "patch_suggestions": [],
+    "runtime_context": {
+      "airflow_version": "3.3.1",
+      "attempt": null,
+      "dag_id": "branch_example",
+      "downstream": [],
+      "executor": "LocalExecutor",
+      "executor_topology": {},
+      "log_sha256": "sha256:5ed578e283c50e861d78f9a717654f9a1e7eb54202f1b1879e6570df58045f44",
+      "missing": [],
+      "pools": {},
+      "provider_versions": {
+        "apache-airflow-providers-standard": "unknown"
+      },
+      "retries": null,
+      "run_id": "example-run",
+      "schema_version": "1.0",
+      "source": null,
+      "state": "upstream_failed",
+      "task_id": "join",
+      "upstream": [
+        "a",
+        "b"
+      ],
+      "xcom": {}
+    },
+    "supported_complete": true
+  },
+  "product": "airflow-dag-doctor",
+  "schema_version": "1.0",
+  "verdict": "needs_review"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "contentsweep-dag-doctor",
+  "version": "1.0.0",
+  "description": "Diagnose exported Airflow 3.2/3.3 incidents with evidence and explicit coverage gaps.",
+  "author": {
+    "name": "Content Sweep LLC",
+    "email": "founder@contentsweep.ai"
+  },
+  "homepage": "https://mcp.contentsweep.ai/dag-doctor",
+  "repository": "https://github.com/founder-sweep/contentsweep-dag-doctor"
+}

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "contentsweep-dag-doctor": {
+      "type": "stdio",
+      "command": "${env:CONTENTSWEEP_DAG_DOCTOR_MCP_COMMAND}",
+      "args": []
+    }
+  }
+}

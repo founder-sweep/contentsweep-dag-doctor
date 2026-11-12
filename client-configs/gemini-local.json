@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "contentsweep-dag-doctor": {
+      "command": "${CONTENTSWEEP_DAG_DOCTOR_MCP_COMMAND}",
+      "args": []
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "contentsweep-dag-doctor": {
+      "url": "https://mcp.contentsweep.ai/v1/dag-doctor/mcp/",
+      "headers": {
+        "X-API-Key": "${env:CONTENTSWEEP_DAG_DOCTOR_API_KEY}"
+      }
+    }
+  }
+}

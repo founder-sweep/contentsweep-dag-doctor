@@ -1,0 +1,15 @@
+{
+  "airflow_version": "3.3.1",
+  "dag_id": "daily_load",
+  "executor": "LocalExecutor",
+  "logs": "Task queued: pool full; no slots",
+  "pools": {
+    "warehouse": "full"
+  },
+  "provider_versions": {
+    "apache-airflow-providers-standard": "unknown"
+  },
+  "schema_version": "1.0",
+  "state": "queued",
+  "task_id": "load"
+}
