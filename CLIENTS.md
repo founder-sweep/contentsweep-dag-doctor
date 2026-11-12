@@ -22,7 +22,7 @@ Use the published marketplace entry when available, or merge `client-configs/kil
 
 ## Cline
 
-Ask Cline to follow this README and `llms-install.md`. Merge the entry in `client-configs/cline.json` into its MCP settings and provide the named setting privately. The hosted example selects `streamableHttp` explicitly. Keep tool approvals enabled.
+Ask Cline to follow this README and `llms-install.md`. Merge the entry in `client-configs/cline.json` into its MCP settings and provide the named setting privately. The templates use supported `${env:NAME}` interpolation. Make those variables available in the client launch environment, or fill the actual values directly in the client's private MCP settings. Restart the client after changing its launch environment. The hosted example selects `streamableHttp` explicitly. Keep tool approvals enabled.
 
 ## Cursor
 
@@ -30,7 +30,7 @@ Install the Cursor plugin from the marketplace or load this repository as a loca
 
 ## Skill and first task
 
-Read [diagnose-airflow-exports](skills/diagnose-airflow-exports/SKILL.md) and its relative references. Use the repository-owned synthetic example first and inspect the substantive result, not just execution success. Fixture approval never authorizes customer uploads, business meanings, purchases or downstream writes.
+Read [diagnose-airflow-exports](skills/diagnose-airflow-exports/SKILL.md) and its relative references. Use the repository-owned synthetic example first and inspect the substantive result, not just execution success. Fixture approval never authorizes customer uploads, business meanings, purchases or downstream writes. Read the owned example `bundle.json` before a hosted upload and pass its parsed properties as MCP arguments, including the `files` mapping. Each file name and content must come from that reviewed bundle. For a local DAG example, `incident.json` is beside the `source/` directory; pass that complete incident object as `runtime_context`.
 
 ## Price and supported scope
 
