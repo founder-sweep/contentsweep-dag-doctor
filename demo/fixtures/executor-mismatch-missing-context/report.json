@@ -1,0 +1,107 @@
+{
+  "coverage": {
+    "airflow_version": "3.3.1",
+    "python_ast": "analyzed",
+    "runtime_context": "provided",
+    "runtime_execution": "not_performed"
+  },
+  "findings": [
+    {
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "excerpt": null,
+          "fact": "missing=run_id",
+          "locator": "DD-CONTEXT-001",
+          "source": "runtime_context"
+        }
+      ],
+      "id": "DD-CONTEXT-001",
+      "metadata": {},
+      "origin": "deterministic",
+      "remediation": "Provide the missing fields to enable a higher-confidence diagnosis.",
+      "severity": "info",
+      "status": "open",
+      "title": "Runtime context is incomplete"
+    },
+    {
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "excerpt": null,
+          "fact": "executor=KubernetesExecutor; topology=['LocalExecutor']",
+          "locator": "DD-RUNTIME-006",
+          "source": "runtime_context"
+        }
+      ],
+      "id": "DD-RUNTIME-006",
+      "metadata": {},
+      "origin": "deterministic",
+      "remediation": "Export the task-selected executor and configure the matching worker class.",
+      "severity": "high",
+      "status": "open",
+      "title": "Selected executor is absent from the supplied topology"
+    }
+  ],
+  "generated_at": "2026-11-12T13:14:48.808955Z",
+  "input_fingerprint": "sha256:5bc588eaf3587585473767e380054e2d4f4ff9ac031bfe9c75691c9f0f6ff712",
+  "metadata": {
+    "coverage_gaps": [],
+    "dag_like_files": 1,
+    "diagnosis": {
+      "airflow_version": "3.3.1",
+      "candidate_causes": [
+        "DD-RUNTIME-006"
+      ],
+      "confidence": 0.7,
+      "confidence_interpretation": "heuristic score, not a measured probability",
+      "context_schema_version": "1.0",
+      "evidence_references": [
+        "DD-CONTEXT-001",
+        "DD-RUNTIME-006"
+      ],
+      "evidence_strength": "supported signature; confirm against the complete incident",
+      "missing_context": [
+        "run_id"
+      ],
+      "primary_cause": "DD-RUNTIME-006",
+      "provider_versions": {
+        "apache-airflow-providers-standard": "unknown"
+      }
+    },
+    "files_analyzed": 1,
+    "patch_suggestions": [],
+    "runtime_context": {
+      "airflow_version": "3.3.1",
+      "attempt": null,
+      "dag_id": "daily_load",
+      "downstream": [],
+      "executor": "KubernetesExecutor",
+      "executor_topology": {
+        "LocalExecutor": {
+          "workers": 1
+        }
+      },
+      "log_sha256": "sha256:dfea1ad2f69c80da1bf323b4433564900087d47fcfbd1ed11a75fac25cdc19b5",
+      "missing": [
+        "run_id"
+      ],
+      "pools": {},
+      "provider_versions": {
+        "apache-airflow-providers-standard": "unknown"
+      },
+      "retries": null,
+      "run_id": null,
+      "schema_version": "1.0",
+      "source": null,
+      "state": "failed",
+      "task_id": "load",
+      "upstream": [],
+      "xcom": {}
+    },
+    "supported_complete": false
+  },
+  "product": "airflow-dag-doctor",
+  "schema_version": "1.0",
+  "verdict": "needs_context"
+}

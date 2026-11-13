@@ -1,0 +1,16 @@
+{
+  "airflow_version": "3.3.1",
+  "dag_id": "branch_example",
+  "executor": "LocalExecutor",
+  "logs": "Upstream task failed; inspect upstream evidence",
+  "provider_versions": {
+    "apache-airflow-providers-standard": "unknown"
+  },
+  "schema_version": "1.0",
+  "state": "upstream_failed",
+  "task_id": "join",
+  "upstream": [
+    "a",
+    "b"
+  ]
+}

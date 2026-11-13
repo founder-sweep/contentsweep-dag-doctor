@@ -1,0 +1,321 @@
+{
+  "evidence_kind": "Recorded deterministic MCP execution of owned synthetic fixtures; not a customer outcome",
+  "execution": "deterministic MCP client; not a native agent transcript",
+  "fixtures_sha256": {
+    "branch-join-missing-context/bundle.json": "360b9d54758489dbfcdee0be193ab13c518d877be41db43389b7ee0dc7680548",
+    "branch-join-missing-context/incident.json": "ef941a44ebe8e1230b8ea75fa39a549ebe8901db0526d6f7c47c6f2aae18ec4f",
+    "branch-join-missing-context/report.json": "c72598c8e73eb37c169a36e6e3da706537ad31141a18831adda94a184c24283a",
+    "branch-join-missing-context/source/branch.py": "cdebdf240027d74999c5483786714d6d2af4b08a1305bed20dd0653ce3f73d68",
+    "branch-join/bundle.json": "4dea185746673f875184a901d9dfd3d3a661b06aeb4489a574b2e7743e199914",
+    "branch-join/incident.json": "0d6d90ac06a389955e7bbe3d16d3c4c82be5f24538f08d7d243169c6c8432d6c",
+    "branch-join/report.json": "c8d24452111e0369d066b1e90694203d69a76861bca7caf878509969567c2d97",
+    "branch-join/source/branch.py": "cdebdf240027d74999c5483786714d6d2af4b08a1305bed20dd0653ce3f73d68",
+    "executor-mismatch-missing-context/bundle.json": "67c3ac3ccc384c3c40d5c0112fde49b2183f66bad1c56e1ec13252f6c0579384",
+    "executor-mismatch-missing-context/incident.json": "f627de8706e6148b929c6bbdf0d0f95a14e3d7690061e51fdd8a7aa5d4ea4603",
+    "executor-mismatch-missing-context/report.json": "9dffc66609b70b37ef40695b4aeeb8dff956e7e15f28e2520119451676153222",
+    "executor-mismatch-missing-context/source/daily_load.py": "9f44d3ca1026f9feb89111dc88f24bf3730923fb57e8451ecb29aa80bb79dcf9",
+    "executor-mismatch/bundle.json": "471790c35b1074ca588665a0813ee8483ca91582e7e936c8ece9a66933c123ed",
+    "executor-mismatch/incident.json": "96ce009b09772bd103fdf19c617a86415bcb5540028509118c90b9f9764b6c89",
+    "executor-mismatch/report.json": "7790aac298f2987d05d1a8fe1992e90303152d14a90a82a14aa769e0c769e6c2",
+    "executor-mismatch/source/daily_load.py": "9f44d3ca1026f9feb89111dc88f24bf3730923fb57e8451ecb29aa80bb79dcf9",
+    "pool-wait-missing-context/bundle.json": "1b4039bf449654fa832378be024d47e37ec6f9c4e22779c0ade7db121da194b0",
+    "pool-wait-missing-context/incident.json": "524248360001805ca8c8c3e335812ac1fe02c51f5897c326d3a0616c38ea590d",
+    "pool-wait-missing-context/report.json": "9c197adf4cf3ee36e6b71682c6b9caf23b79407fc0ca8c93848e0695f64d3530",
+    "pool-wait-missing-context/source/daily_load.py": "9f44d3ca1026f9feb89111dc88f24bf3730923fb57e8451ecb29aa80bb79dcf9",
+    "pool-wait/bundle.json": "bab9ce5e740a733dcc31568ef8ba59dd164f26360f285be14cb99305288b599b",
+    "pool-wait/incident.json": "13f98f15d798fd7305c72fb3b2daed5f5ea1222460b749cabdb15cc5d4b13cb7",
+    "pool-wait/report.json": "472ef5bc3547063e818dcc7bb1ad1498192e48090d01fcd7757f916c25ddc0e0",
+    "pool-wait/source/daily_load.py": "9f44d3ca1026f9feb89111dc88f24bf3730923fb57e8451ecb29aa80bb79dcf9"
+  },
+  "internal_noncash_qualification": true,
+  "mode": "hosted",
+  "original_result_sha256": "456be414e10b8c56e6380e3180cb222cb83cddd8b318be8b48a2a39f418beb8d",
+  "product": "dag_doctor",
+  "recorded_at": "2026-11-13T16:12:47.084224+00:00",
+  "result": {
+    "cases": [
+      {
+        "case": "executor-mismatch-missing-context",
+        "receipt": {
+          "billing_mode": "live",
+          "completed": 17945823245430257e-7,
+          "engine_version": "1.0.0",
+          "input_fingerprint": "2e369de3cd199cb1ac86ed906b49c281b2323c413df11c742da88127fe582b60",
+          "job_id": "dag_job_ae8b74aee2dc8546497071d959e2dbff505d994907cab4a93556f13fe46b7b22",
+          "product": "airflow-dag-doctor",
+          "report_sha256": "f5dce360d59f38c6feffe9e611b91b4923ae951002199f7894ac6543bff4b2e2",
+          "reports_consumed": 0,
+          "verdict": "needs_context"
+        },
+        "report": {
+          "coverage": {
+            "airflow_version": "3.3.1",
+            "python_ast": "analyzed",
+            "runtime_context": "provided",
+            "runtime_execution": "not_performed"
+          },
+          "findings": [
+            {
+              "confidence": 1,
+              "evidence": [
+                {
+                  "excerpt": null,
+                  "fact": "missing=run_id",
+                  "locator": "DD-CONTEXT-001",
+                  "source": "runtime_context"
+                }
+              ],
+              "id": "DD-CONTEXT-001",
+              "metadata": {
+                
+              },
+              "origin": "deterministic",
+              "remediation": "Provide the missing fields to enable a higher-confidence diagnosis.",
+              "severity": "info",
+              "status": "open",
+              "title": "Runtime context is incomplete"
+            },
+            {
+              "confidence": 1,
+              "evidence": [
+                {
+                  "excerpt": null,
+                  "fact": "executor=KubernetesExecutor; topology=['LocalExecutor']",
+                  "locator": "DD-RUNTIME-006",
+                  "source": "runtime_context"
+                }
+              ],
+              "id": "DD-RUNTIME-006",
+              "metadata": {
+                
+              },
+              "origin": "deterministic",
+              "remediation": "Export the task-selected executor and configure the matching worker class.",
+              "severity": "high",
+              "status": "open",
+              "title": "Selected executor is absent from the supplied topology"
+            }
+          ],
+          "generated_at": "2026-11-13T15:05:24.520731Z",
+          "input_fingerprint": "sha256:5bc588eaf3587585473767e380054e2d4f4ff9ac031bfe9c75691c9f0f6ff712",
+          "metadata": {
+            "coverage_gaps": [
+              
+            ],
+            "dag_like_files": 1,
+            "diagnosis": {
+              "airflow_version": "3.3.1",
+              "candidate_causes": [
+                "DD-RUNTIME-006"
+              ],
+              "confidence": 7e-1,
+              "confidence_interpretation": "heuristic score, not a measured probability",
+              "context_schema_version": "1.0",
+              "evidence_references": [
+                "DD-CONTEXT-001",
+                "DD-RUNTIME-006"
+              ],
+              "evidence_strength": "supported signature; confirm against the complete incident",
+              "missing_context": [
+                "run_id"
+              ],
+              "primary_cause": "DD-RUNTIME-006",
+              "provider_versions": {
+                "apache-airflow-providers-standard": "unknown"
+              }
+            },
+            "engine_version": "1.0.0",
+            "files_analyzed": 1,
+            "patch_suggestions": [
+              
+            ],
+            "runtime_context": {
+              "airflow_version": "3.3.1",
+              "attempt": null,
+              "dag_id": "daily_load",
+              "downstream": [
+                
+              ],
+              "executor": "KubernetesExecutor",
+              "executor_topology": {
+                "LocalExecutor": {
+                  "workers": 1
+                }
+              },
+              "log_sha256": "sha256:dfea1ad2f69c80da1bf323b4433564900087d47fcfbd1ed11a75fac25cdc19b5",
+              "missing": [
+                "run_id"
+              ],
+              "pools": {
+                
+              },
+              "provider_versions": {
+                "apache-airflow-providers-standard": "unknown"
+              },
+              "retries": null,
+              "run_id": null,
+              "schema_version": "1.0",
+              "source": null,
+              "state": "failed",
+              "task_id": "load",
+              "upstream": [
+                
+              ],
+              "xcom": {
+                
+              }
+            },
+            "supported_complete": false,
+            "upload_sha256": "2e369de3cd199cb1ac86ed906b49c281b2323c413df11c742da88127fe582b60"
+          },
+          "product": "airflow-dag-doctor",
+          "schema_version": "1.0",
+          "verdict": "needs_context"
+        }
+      },
+      {
+        "case": "executor-mismatch",
+        "receipt": {
+          "billing_mode": "live",
+          "completed": 1794582317129245e-6,
+          "engine_version": "1.0.0",
+          "input_fingerprint": "070da9ca297f3b5507394458260d8820a5f03b1a096a5c784ff3d5aeae33df0a",
+          "job_id": "dag_job_7565f933602fa8919a165fe9e9575214be357dbf6faabc7bceab15fbbadafb94",
+          "product": "airflow-dag-doctor",
+          "report_sha256": "213e03df8590b7e91c9f47895438f50daca894fdc0c9911632da5d9d33bd1d76",
+          "reports_consumed": 1,
+          "verdict": "needs_review"
+        },
+        "report": {
+          "coverage": {
+            "airflow_version": "3.3.1",
+            "python_ast": "analyzed",
+            "runtime_context": "provided",
+            "runtime_execution": "not_performed"
+          },
+          "findings": [
+            {
+              "confidence": 1,
+              "evidence": [
+                {
+                  "excerpt": null,
+                  "fact": "executor=KubernetesExecutor; topology=['LocalExecutor']",
+                  "locator": "DD-RUNTIME-006",
+                  "source": "runtime_context"
+                }
+              ],
+              "id": "DD-RUNTIME-006",
+              "metadata": {
+                
+              },
+              "origin": "deterministic",
+              "remediation": "Export the task-selected executor and configure the matching worker class.",
+              "severity": "high",
+              "status": "open",
+              "title": "Selected executor is absent from the supplied topology"
+            }
+          ],
+          "generated_at": "2026-11-13T15:05:17.101014Z",
+          "input_fingerprint": "sha256:96bd6d453adfe7fe35140387950d4299554e2899c3ec530ad45b675e43c768e7",
+          "metadata": {
+            "coverage_gaps": [
+              
+            ],
+            "dag_like_files": 1,
+            "diagnosis": {
+              "airflow_version": "3.3.1",
+              "candidate_causes": [
+                "DD-RUNTIME-006"
+              ],
+              "confidence": 7e-1,
+              "confidence_interpretation": "heuristic score, not a measured probability",
+              "context_schema_version": "1.0",
+              "evidence_references": [
+                "DD-RUNTIME-006"
+              ],
+              "evidence_strength": "supported signature; confirm against the complete incident",
+              "missing_context": [
+                
+              ],
+              "primary_cause": "DD-RUNTIME-006",
+              "provider_versions": {
+                "apache-airflow-providers-standard": "unknown"
+              }
+            },
+            "engine_version": "1.0.0",
+            "files_analyzed": 1,
+            "patch_suggestions": [
+              
+            ],
+            "runtime_context": {
+              "airflow_version": "3.3.1",
+              "attempt": null,
+              "dag_id": "daily_load",
+              "downstream": [
+                
+              ],
+              "executor": "KubernetesExecutor",
+              "executor_topology": {
+                "LocalExecutor": {
+                  "workers": 1
+                }
+              },
+              "log_sha256": "sha256:dfea1ad2f69c80da1bf323b4433564900087d47fcfbd1ed11a75fac25cdc19b5",
+              "missing": [
+                
+              ],
+              "pools": {
+                
+              },
+              "provider_versions": {
+                "apache-airflow-providers-standard": "unknown"
+              },
+              "retries": null,
+              "run_id": "example-run",
+              "schema_version": "1.0",
+              "source": null,
+              "state": "failed",
+              "task_id": "load",
+              "upstream": [
+                
+              ],
+              "xcom": {
+                
+              }
+            },
+            "supported_complete": true,
+            "upload_sha256": "070da9ca297f3b5507394458260d8820a5f03b1a096a5c784ff3d5aeae33df0a"
+          },
+          "product": "airflow-dag-doctor",
+          "schema_version": "1.0",
+          "verdict": "needs_review"
+        }
+      }
+    ],
+    "cloud_actions": 0,
+    "mode": "hosted",
+    "target_code_executed": false
+  },
+  "server": {
+    "description": "Diagnose exported Airflow 3.2/3.3 DAGs and incident evidence without executing customer code.",
+    "icons": null,
+    "name": "ai.contentsweep/airflow-dag-doctor",
+    "title": null,
+    "version": "1.0.0",
+    "website_url": null
+  },
+  "status": "passed",
+  "synthetic": true,
+  "tools": [
+    "upload_dag_bundle",
+    "preview_dag_bundle",
+    "quote_dag_diagnosis",
+    "start_dag_diagnosis",
+    "get_dag_diagnosis",
+    "get_dag_report",
+    "delete_dag_resource",
+    "dag_doctor_wallet",
+    "dag_doctor_billing_status",
+    "dag_doctor_purchase_history"
+  ]
+}

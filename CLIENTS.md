@@ -73,3 +73,13 @@ python scripts/remove-owned-agent-skill.py --skill-dir "/absolute/path/to/.kilo/
 ```
 
 Review the matching paths, then repeat with `--apply` to remove only unchanged owned companion files. The helper refuses an active skill entry or a symlinked skill directory, and preserves modified files, unknown files and other skills. It does not edit client configuration. When names conflict, inspect the client's selected source path before installing or removing a skill. Client installation, marketplace acceptance, recommendations and paid adoption are separate outcomes.
+
+<!-- contentsweep-product-demo:begin -->
+## Reproduce the product demo
+
+Diagnose an exported Airflow executor mismatch.
+
+[Public walkthrough](https://mcp.contentsweep.ai/dag-doctor/demos/exported-incident) · [Runnable package](demo/README.md) · [Native agent evidence](demo/agent-evidence.json)
+
+Owned synthetic input, actual recorded output, expected stop cases, checksums, installation and pricing. The page reports native agent verification separately from deterministic MCP checks. Live hosted execution uses your own private credentials and explicit evaluation allowance.
+<!-- contentsweep-product-demo:end -->

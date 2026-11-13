@@ -1,0 +1,24 @@
+{
+  "airflow_version": "3.3.1",
+  "files": {
+    "branch.py": "from airflow import DAG\nfrom airflow.providers.standard.operators.python import BranchPythonOperator, PythonOperator\ndag = DAG(\"branch_example\")\nbranch = BranchPythonOperator(task_id=\"choose\")\na = PythonOperator(task_id=\"a\")\nb = PythonOperator(task_id=\"b\")\njoin = PythonOperator(task_id=\"join\", trigger_rule=\"all_success\")\nbranch >> [a, b] >> join\n"
+  },
+  "runtime_context": {
+    "airflow_version": "3.3.1",
+    "dag_id": "branch_example",
+    "executor": "LocalExecutor",
+    "logs": "Upstream task failed; inspect upstream evidence",
+    "provider_versions": {
+      "apache-airflow-providers-standard": "unknown"
+    },
+    "run_id": "example-run",
+    "schema_version": "1.0",
+    "state": "upstream_failed",
+    "task_id": "join",
+    "upstream": [
+      "a",
+      "b"
+    ]
+  },
+  "suggest_patches": false
+}
