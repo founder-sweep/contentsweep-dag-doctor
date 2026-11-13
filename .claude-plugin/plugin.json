@@ -1,7 +1,7 @@
 {
   "name": "contentsweep-dag-doctor",
   "version": "1.0.0",
-  "description": "Diagnose exported Airflow 3.2/3.3 incidents with evidence and explicit coverage gaps.",
+  "description": "Proven exported Airflow incident diagnosis with evidence-linked findings. Repeatable hosted and free local demos show executor mismatch and context stops.",
   "author": {
     "name": "Content Sweep LLC",
     "email": "founder@contentsweep.ai"

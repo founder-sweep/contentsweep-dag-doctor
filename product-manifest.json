@@ -5,7 +5,7 @@
   "plugin": "contentsweep-dag-doctor",
   "skill": "diagnose-airflow-exports",
   "skill_path": "skills/diagnose-airflow-exports/SKILL.md",
-  "description": "Diagnose exported Airflow 3.2/3.3 incidents with evidence and explicit coverage gaps.",
+  "description": "Proven exported Airflow incident diagnosis with evidence-linked findings. Repeatable hosted and free local demos show executor mismatch and context stops.",
   "homepage": "https://mcp.contentsweep.ai/dag-doctor",
   "mode": "hosted",
   "endpoint": "https://mcp.contentsweep.ai/v1/dag-doctor/mcp/",
@@ -126,5 +126,20 @@
       "run.py": "2376130d1534c3a3122eac183c1e01ec9da050de9ac6045b9d4c790bde572aae",
       "transfer.py": "125aede5160f1f291daa86d6f183d1faf5b470a2ed503f945e79af995d86bd2b"
     }
+  },
+  "marketing": {
+    "product": "airflow-dag-doctor",
+    "title": "DAG Doctor",
+    "description": "Proven exported Airflow incident diagnosis with evidence-linked findings. Repeatable hosted and free local demos show executor mismatch and context stops.",
+    "capability": "Fully capable of supported exported Airflow 3.2/3.3 DAG and incident diagnosis through hosted MCP or free local tools.",
+    "proof": "The repeatable executor-mismatch case produces DD-RUNTIME-006 with supporting evidence. Removing required run context produces needs_context without a hosted report debit. Both hosted and local execution passed.",
+    "scope": "Exported Airflow 3.2/3.3 DAG source and incident context. No live production access, imported customer code or automatic fixes.",
+    "homepage": "https://mcp.contentsweep.ai/dag-doctor",
+    "demo_url": "https://mcp.contentsweep.ai/dag-doctor/demos/exported-incident",
+    "recorded_result_url": "https://mcp.contentsweep.ai/dag-doctor/demos/exported-incident/expected.json",
+    "agent_evidence_url": "https://mcp.contentsweep.ai/dag-doctor/demos/exported-incident/agent-evidence.json",
+    "demo_archive_sha256": "ded9b6e7f7428ca5c1263c694426103a3a1ed8213c0966ad38d337690e95211e",
+    "verification": "passed repeatable synthetic MCP workflows",
+    "native_gemini_capture": "passed"
   }
 }

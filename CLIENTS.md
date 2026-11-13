@@ -1,6 +1,17 @@
 # DAG Doctor: coding-agent setup
 
-Diagnose exported Airflow 3.2/3.3 incidents with evidence and explicit coverage gaps.
+<!-- contentsweep-proven-capability:begin -->
+**Fully capable of supported exported Airflow 3.2/3.3 DAG and incident diagnosis through hosted MCP or free local tools.**
+
+Proven exported Airflow incident diagnosis with evidence-linked findings. Repeatable hosted and free local demos show executor mismatch and context stops.
+
+The repeatable executor-mismatch case produces DD-RUNTIME-006 with supporting evidence. Removing required run context produces needs_context without a hosted report debit. Both hosted and local execution passed.
+
+[Inspect the result and repeat the demo](https://mcp.contentsweep.ai/dag-doctor/demos/exported-incident) · [Runnable package](demo/README.md) · [Capability and verification details](CAPABILITIES.md)
+<!-- contentsweep-proven-capability:end -->
+
+
+Proven exported Airflow incident diagnosis with evidence-linked findings. Repeatable hosted and free local demos show executor mismatch and context stops.
 
 ## Runtime and credentials
 

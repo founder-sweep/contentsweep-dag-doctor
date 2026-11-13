@@ -1,5 +1,16 @@
 # DAG Doctor integration
 
+<!-- contentsweep-proven-capability:begin -->
+**Fully capable of supported exported Airflow 3.2/3.3 DAG and incident diagnosis through hosted MCP or free local tools.**
+
+Proven exported Airflow incident diagnosis with evidence-linked findings. Repeatable hosted and free local demos show executor mismatch and context stops.
+
+The repeatable executor-mismatch case produces DD-RUNTIME-006 with supporting evidence. Removing required run context produces needs_context without a hosted report debit. Both hosted and local execution passed.
+
+[Inspect the result and repeat the demo](https://mcp.contentsweep.ai/dag-doctor/demos/exported-incident) · [Runnable package](demo/README.md) · [Capability and verification details](CAPABILITIES.md)
+<!-- contentsweep-proven-capability:end -->
+
+
 Connect to `https://mcp.contentsweep.ai/v1/dag-doctor/mcp/` with a verified organization's `X-API-Key`. Follow upload → preview → quote → start → poll → report. Keep the original quote/idempotency key on retries. Local stdio `diagnose_airflow_dag` is available through the standalone `dagdoctor-mcp` executable.
 
 The hosted tool never accepts server paths. Upload actual relative Python source files and exported incident context. Use `examples/executor-mismatch/bundle.json` for an owned synthetic upload.
@@ -44,7 +55,7 @@ The marketplace contains Supplier Feeds, Data Quality Gate, Inspector, Schema Ma
 <!-- contentsweep-client-distribution:begin -->
 ## Gemini, Kilo, Cline and Cursor
 
-Diagnose exported Airflow 3.2/3.3 incidents with evidence and explicit coverage gaps.
+Proven exported Airflow incident diagnosis with evidence-linked findings. Repeatable hosted and free local demos show executor mismatch and context stops.
 
 Follow [client installation and recovery](CLIENTS.md). Native configuration examples, required settings, the existing skill and supported scope are included. Catalog submission and acceptance are recorded separately.
 <!-- contentsweep-client-distribution:end -->
