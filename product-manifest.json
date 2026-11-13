@@ -87,11 +87,11 @@
       "pool-wait-missing-context/report.json": "9c197adf4cf3ee36e6b71682c6b9caf23b79407fc0ca8c93848e0695f64d3530",
       "pool-wait-missing-context/source/daily_load.py": "9f44d3ca1026f9feb89111dc88f24bf3730923fb57e8451ecb29aa80bb79dcf9"
     },
-    "archive_sha256": "59b2647fcfa4b0b7df4d033960cb3905171355913c0566ce39673dd745e43395",
+    "archive_sha256": "ded9b6e7f7428ca5c1263c694426103a3a1ed8213c0966ad38d337690e95211e",
     "recorded_result_sha256": "456be414e10b8c56e6380e3180cb222cb83cddd8b318be8b48a2a39f418beb8d",
     "agent_status": "passed",
     "fixtures_path": "demo/fixtures",
-    "source_base_commit": "830e358b7568ae513a64ffe8100abe9aa7823be9",
+    "source_base_commit": "9eca0bc0de946e9e5409ba29b2244d54130baa55",
     "files": {
       "AGENT_PROMPT.md": "dede24ee50928f8f3c1d759db303fbd6300800313a95019a233a17622b9c607c",
       "README.md": "ebf06b73be7904d95064d82b8c048826369a41e587e5b7a8e9847392b1c604ec",
@@ -121,7 +121,7 @@
       "fixtures/pool-wait-missing-context/incident.json": "524248360001805ca8c8c3e335812ac1fe02c51f5897c326d3a0616c38ea590d",
       "fixtures/pool-wait-missing-context/report.json": "9c197adf4cf3ee36e6b71682c6b9caf23b79407fc0ca8c93848e0695f64d3530",
       "fixtures/pool-wait-missing-context/source/daily_load.py": "9f44d3ca1026f9feb89111dc88f24bf3730923fb57e8451ecb29aa80bb79dcf9",
-      "manifest.json": "1a9038b01ad2c9b893e68f17ec4b206b81dd633f6ff824e5dda913768fb40b10",
+      "manifest.json": "96b4ef295f47f8f36f830125abb1a17eed0e91f5a024eb484fc3eb75a59d4659",
       "recorded/local-result.json": "12d8b9e223fc202a0a31e99924129a6b44ed2dbd9d449391fd13be2840325a1e",
       "run.py": "2376130d1534c3a3122eac183c1e01ec9da050de9ac6045b9d4c790bde572aae",
       "transfer.py": "125aede5160f1f291daa86d6f183d1faf5b470a2ed503f945e79af995d86bd2b"
