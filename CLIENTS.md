@@ -67,7 +67,7 @@ Keep every filename, dictionary key and source byte unchanged. A filename such a
 
 ```bash
 BUNDLE_FILE="/absolute/path/to/owned/bundle.json"
-curl --fail-with-body --silent --show-error --request POST "https://uploads" \
+curl --fail-with-body --silent --show-error --request POST "https://mcp.contentsweep.ai/v1/dag-doctor/uploads" \
   --header "Content-Type: application/json" \
   --header "X-API-Key: ${CONTENTSWEEP_DAG_DOCTOR_API_KEY}" \
   --data-binary "@${BUNDLE_FILE}"
