@@ -19,11 +19,11 @@ The adjacent server manifest is prepared release metadata. Availability, public 
 
 ## Free local tools
 
-Python 3.12+ is required. Download the [wheel](https://mcp.contentsweep.ai/dag-doctor/download), verify it against the [SHA256 manifest](https://mcp.contentsweep.ai/dag-doctor/downloads/manifest.json), then install into a separate environment:
+Install [DAG Doctor 1.0.1 from PyPI](https://pypi.org/project/contentsweep-dag-doctor/1.0.1/) in a Python 3.12 or later virtual environment. Include the `mcp` extra for the local stdio server.
 
 ```sh
 python3.12 -m venv .venv-dag-doctor
-.venv-dag-doctor/bin/python -m pip install './contentsweep_dag_doctor-1.0.0-py3-none-any.whl[mcp]'
+.venv-dag-doctor/bin/python -m pip install 'contentsweep-dag-doctor[mcp]==1.0.1'
 .venv-dag-doctor/bin/dagdoctor diagnose examples/pool-wait/source --runtime-context examples/pool-wait/incident.json --format json
 ```
 
