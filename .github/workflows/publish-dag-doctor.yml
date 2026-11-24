@@ -1,0 +1,69 @@
+name: DAG Doctor 1.0.1 PyPI release
+
+on:
+  workflow_dispatch:
+    inputs:
+      wheel:
+        description: Base64 of the reviewed 1.0.1 wheel
+        required: true
+        type: string
+      source:
+        description: Base64 of the reviewed 1.0.1 source distribution
+        required: true
+        type: string
+      publish:
+        description: Upload the verified files to PyPI
+        default: false
+        type: boolean
+
+permissions: {}
+
+concurrency:
+  group: contentsweep-dag-doctor-pypi
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: github.repository == 'founder-sweep/contentsweep-dag-doctor' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - name: Match both files to the reviewed SHA-256 digests
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import base64
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          event = Path(os.environ['GITHUB_EVENT_PATH'])
+          inputs = json.loads(event.read_text(encoding='utf-8'))['inputs']
+          expected = {
+              'wheel': (
+                  'contentsweep_dag_doctor-1.0.1-py3-none-any.whl',
+                  '6772c81bf0899765fb923a7897bae615b87e285480825dc74680675b352c217f',
+              ),
+              'source': (
+                  'contentsweep_dag_doctor-1.0.1.tar.gz',
+                  '3de0b404ebb380d48d67c93a82f3622e18bd6189a0e39dc4cff9a1bdc44ec9ad',
+              ),
+          }
+
+          dist = Path('dist')
+          dist.mkdir()
+          for key, (filename, checksum) in expected.items():
+              contents = base64.b64decode(inputs[key], validate=True)
+              if hashlib.sha256(contents).hexdigest() != checksum:
+                  raise SystemExit(f'Reviewed SHA-256 mismatch for {filename}')
+              (dist / filename).write_bytes(contents)
+              print(f'Verified SHA-256 for {filename}')
+          PY
+
+      - name: Publish the reviewed distributions to PyPI
+        if: inputs.publish
+        uses: pypa/gh-action-pypi-publish@7245906fb61fa33a13554f9d5fb856fe61758086
